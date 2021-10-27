@@ -1,0 +1,5 @@
+{
+  "verbose": true,
+  "watch": ["src"],
+  "exec": "./node_modules/ts-node/dist/bin.js ./src/search.ts"
+}
