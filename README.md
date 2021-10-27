@@ -23,4 +23,4 @@ Once you are done following the details above, you can run the app.
 `yarn start`
 
 Or start it in development mode
-`yarn run development`"# es-typescript" 
+`yarn run development`
