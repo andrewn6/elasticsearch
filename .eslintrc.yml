@@ -3,6 +3,8 @@ env:
   es2021: true
 ignorePatterns:
   - "src/search.ts"
+  - "src/middleware/logging.ts"
+  - "src/lib/file.ts"
 extends:
   - eslint:recommended
   - plugin:@typescript-eslint/recommended
