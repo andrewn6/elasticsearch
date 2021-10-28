@@ -31,7 +31,7 @@ jobs:
           CI: true
       
       - name: Run Yarn Lint
-        run: yarn lint
+        run: yarn lint --fix
         env:
           CI: true
 
