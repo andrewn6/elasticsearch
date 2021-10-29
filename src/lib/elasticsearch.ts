@@ -1,6 +1,6 @@
 import { Client, ClientOptions, RequestParams } from "elasticsearch";
 
-export default class Elasticsearch {
+export default class ElasticSearch {
 
 	private params: ClientOptions;
 	private client: Client;

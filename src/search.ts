@@ -6,6 +6,7 @@ import * as cookieParser from "cookie-parser";
 
 import { handleError, ErrorHandler } from "./lib/error";
 import logging from "./middleware/logging";
+import config from "./config";
 
 const app = express();
 
@@ -14,16 +15,16 @@ app.use(bodyParser.urlencoded({
   extended: true,
   limit: "15mb"
 }));
-app.use(cookieParser(process.env.sessionsecret))
+app.use(cookieParser(config.sessionSeceret))
 
-if(process.env.isProduction) {
+if(config.isProduction) {
   app.set("Trust proxy", 1);
 }
 
 app.use(logging(
   "elasticsearch",
   "INFO",
-  !process.env.isProduction,
+  !config.isProduction,
 ));
 
 app.use("*", (req, res, next) => {
@@ -34,6 +35,6 @@ app.use((err: ErrorHandler, req: express.Request, res: express.Response, next: e
   return handleError(err, res);
 });
 
-const server = app.listen(process.env.PORT);
+const server = app.listen(config.port);
 
 module.exports = server;
