@@ -1,5 +1,5 @@
 FROM node:14-alpine
-WORKDIR /server
+WORKDIR /
 ADD . . 
 RUN yarn install
 RUN yarn server:build
