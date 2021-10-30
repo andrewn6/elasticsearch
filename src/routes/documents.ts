@@ -11,7 +11,7 @@ const router = Router();
 
 export function materialFormat(hit: never) {
 	return {
-		weight: hit._score
+		weight: hit
 	};
 }
 
